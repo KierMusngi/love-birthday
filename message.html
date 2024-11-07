@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        canvas {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            /* padding: 20px; */
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
+            background: #eed4e9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #5e5e5e;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #5e5e5e;
+            line-height: 1.6;
+        }
+        .heart {
+            color: #ff6347;
+        }
+
+        .container-cat {
+          position: absolute;
+          left: 50%;
+          margin-left: -50px;
+          top: 50%;
+          margin-top: 400px;
+        }
+
+        .mug {
+          position: absolute;
+          width: 92px;
+          height: 80px;
+          background: repeating-linear-gradient(
+          70deg,
+          #f4bbac,
+          #f4bbac 10px,
+          #f1dfcb 10px,
+          #f1dfcb 20px
+        );
+          border-radius: 20px 20px 50px 50px;
+          border: 4px solid #f4bbac;
+        
+          &:after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 25px;
+            border: 10px solid #f4bbac;
+            border-radius: 100%;
+            right: -28px;
+            top: 10px;
+            z-index: -1;
+          }
+        }
+
+        .cat {
+          width: 90px;
+          height: 55px;
+          background-color: #211f1f;
+          position: absolute;
+          border-radius: 250px 250px 120px 120px;
+          left: 5px;
+          top: -30px;
+          box-shadow: 0px 6px 0px 1px rgba(244,187,172,1);
+          z-index: 2;
+        
+          &:after, &:before {
+          content: "";
+          position: absolute;
+        	width: 0; 
+        	height: 0; 
+        	border-left: 18px solid transparent;
+        	border-right: 18px solid transparent;
+        	border-bottom: 25px solid #211f1f;
+          top: -10px;
+          }
+          &:after {
+            transform: rotate(-35deg);
+          }
+          &:before {
+            transform: rotate(35deg);
+            right: 0;
+          }
+        }
+
+        .eyes li {
+          position: absolute;
+          list-style: none;
+          float: left;
+          width: 6px;
+          height: 6px;
+          background-color: #fff;
+          border: 2px solid black;
+          border-radius: 100%;
+        
+          &:first-child{
+            right: 25px;
+          }
+          &:nth-child(2){
+            left: 25px;
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 2px;
+            background-color: black;
+            top: -4px;
+            left: -2px;
+            transform: rotate(120deg);
+          }
+        }
+
+        .mouth {
+          position: absolute;
+          left: 40px;
+          top: 28px;
+        
+          &:after, &:before{
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 8px;
+            background-color: #eee;
+            transform: rotate(-55deg);
+          }
+          &:after {
+            transform: rotate(55deg);
+            right: -8px;
+          }
+        }
+
+        .shadow {
+          width: 90px;
+          height: 30px;
+          border-radius: 100%;
+          background-color: #a9a7a5;
+          position: absolute;
+          top: 70px;
+          left: 6px;
+          opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <canvas id=c></canvas>
+    <canvas id="confetti"></canvas>
+    <div class="container-cat">
+        <div class="shadow"></div>
+      <div class="mug"></div>
+      <div class="cat">
+        <ul class="eyes">
+          <li></li>
+          <li></li>
+        </ul>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <div class="container">
+        <div>
+            <h1>Hi love!</h1>
+            <p>Happy 27th Birthday! 🎉 I hope today brings you so much joy and peace. Life gets messy sometimes, and we have our ups and downs, but I’ll always choose you. You’re my person, I’m done searching. I want us to keep building our dreams together, side by side.</p>
+            <p>I know you care so much about everyone around you, and that makes me love you even more. I also see the picture you’re painting for us, and I’m right here, doing my best to make it our reality. I don’t know exactly when it’ll happen, but I’m committed to making our dreams come true in a way that feels right for both of us. It doesn’t have to be perfect, I just want it to be real, and for us to find that sweet spot where we’re genuinely happy. I love you exactly as you are, and I wouldn’t change a thing.</p>
+            <p>Now that you’re 27, I hope you feel stronger and more sure of what you truly want, no matter what. My biggest wish is for you to be happy, whether I’m in the picture or not. Let’s keep fighting for this crazy, beautiful journey we’re on.</p>
+            <p>Here’s to finding our way to the finish line together, wherever that may be. Have the best day, and I really hope you love the gift! <span class="heart">❤️</span></p>
+            <p>I love you.</p>
+        </div>
+    </div>
+</body>
+<script src="scripts/confetti.min.js" charset="utf-8"></script>
+<script src="scripts/index.js" charset="utf-8"></script>
+</html>
